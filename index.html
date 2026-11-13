@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hire Riya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Rubik+Mono+One&family=Shrikhand&family=Bebas+Neue&family=Playfair+Display:ital,wght@1,900&family=Courier+Prime:wght@400;700&family=Karla:wght@400;500;700&display=swap">
+<style>
+/* Layout: the whole portfolio is a paper loan application for "1 Riya". Paper sheets sit in real 3D depth, annexures swing out when boxes are ticked, a pop-up street folds up out of the page, and submitting runs a credit check that ends in an APPROVED stamp. Single paper theme by choice. */
+:root{
+  --desk:#EFE6D4;
+  --sheet:#FFFDF7;
+  --ink:#201C17;
+  --muted:#6B6155;
+  --rule:#D9CDB4;
+  --tomato:#E8553B;
+  --mustard:#F2B33D;
+  --teal:#2A9D8F;
+  --cobalt:#3557A6;
+  --pink:#F2A0B1;
+  --kraft:#CFAE80;
+  --note:#FBE38E;
+  --money:#9CC9A3;
+  --f-display:"Abril Fatface","Playfair Display",Georgia,serif;
+  --f-body:"Karla","Trebuchet MS",system-ui,sans-serif;
+  --f-type:"Courier Prime","Courier New",monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{overflow-x:clip}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{
+  margin:0;background-color:var(--desk);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .32 0 0 0 0 .22 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+  color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden;
+}
+a{color:var(--cobalt);text-decoration-thickness:2px;text-underline-offset:3px}
+:focus-visible{outline:3px dashed var(--tomato);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding-inline:18px;position:relative}
+.scraps{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.scrap{position:absolute;filter:drop-shadow(2px 4px 0 rgba(32,28,23,.12))}
+.scrap i{display:block;width:100%;height:100%}
+.type{font-family:var(--f-type)}
+.small{font-family:var(--f-type);font-size:13px;color:var(--muted)}
+
+/* cut-out letters */
+.cutout{margin:0;line-height:1.02;display:flex;flex-wrap:wrap;gap:4px 2px;align-items:center}
+.cutout .w{display:flex;gap:2px;margin-right:14px}
+.cutout .l{display:inline-block;padding:2px 6px 0;line-height:1;transform-origin:50% 100%;animation:drop .7s cubic-bezier(.3,1.6,.5,1) both;transition:transform .25s cubic-bezier(.3,1.6,.5,1);box-shadow:2px 3px 0 rgba(32,28,23,.18)}
+.cutout.big .l{font-size:clamp(40px,8vw,74px)}
+.cutout.small .l{font-size:clamp(22px,3.6vw,30px);padding:1px 5px 0;box-shadow:1px 2px 0 rgba(32,28,23,.18)}
+.cutout.small .w{margin-right:9px}
+@keyframes drop{from{transform:translateY(-26px) rotate(var(--r0,0deg)) scale(1.15)}to{transform:translateY(0) rotate(var(--r,0deg)) scale(1)}}
+
+/* hero */
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding-block:40px 30px}
+.formno{display:inline-flex;gap:10px;align-items:center;font-family:var(--f-type);font-size:13.5px;font-weight:700;margin-bottom:14px}
+.formno span{background:var(--ink);color:var(--sheet);padding:4px 10px}
+.formno em{font-style:normal;border:2px solid var(--ink);padding:2px 8px}
+.lede{font-size:clamp(19px,2.2vw,22px);line-height:1.45;margin:18px 0 0;max-width:30ch}
+.lede b{background:linear-gradient(100deg,transparent 0 2%,rgba(242,179,61,.6) 3% 97%,transparent 98%) 0 85%/100% 60% no-repeat}
+.start{display:inline-block;margin-top:22px;font-family:"Bungee",cursive;font-size:17px;letter-spacing:.03em;text-decoration:none;background:var(--tomato);color:var(--sheet);padding:11px 20px 9px;transform:rotate(-2deg);box-shadow:3px 4px 0 rgba(32,28,23,.25);transition:transform .15s}
+.start:hover{transform:rotate(1deg) translateY(-2px)}
+.stage{position:relative;justify-self:center;width:min(100%,370px);perspective:1000px;padding:6% 4% 0}
+.stack{position:relative;transform-style:preserve-3d;transition:transform .25s ease-out}
+.layer{position:absolute;inset:-4% 2% 6% 6%;background:var(--sheet);box-shadow:0 10px 24px -14px rgba(32,28,23,.5)}
+.layer.l1{transform:translateZ(-60px) rotate(-7deg);background:var(--kraft)}
+.layer.l2{transform:translateZ(-30px) rotate(4deg);background:var(--note)}
+.layer.l2::before{content:"";position:absolute;inset:14% 12% auto;height:60%;background:repeating-linear-gradient(transparent 0 17px,rgba(32,28,23,.15) 17px 18px)}
+.stack .sticker{position:relative;display:block;width:100%;height:auto;transform:translateZ(40px);filter:drop-shadow(5px 9px 0 rgba(32,28,23,.22))}
+.clip{position:absolute;top:-8%;left:46%;width:34px;height:74px;transform:translateZ(70px) rotate(8deg);border:4px solid #8D8A84;border-radius:16px;border-bottom-color:transparent}
+.bubble{position:absolute;right:-8px;top:-6%;transform:translateZ(90px) rotate(6deg);font-family:"Shrikhand",cursive;font-size:19px;background:var(--mustard);padding:6px 14px 8px;box-shadow:2px 3px 0 rgba(32,28,23,.2)}
+
+/* the form sheet */
+.formwrap{position:relative;z-index:1;perspective:1600px;padding-block:10px 40px}
+.sheet{position:relative;background:var(--sheet);padding:clamp(22px,4vw,44px);transform-origin:50% 0;perspective:1400px;box-shadow:0 30px 50px -30px rgba(32,28,23,.45),0 2px 0 rgba(32,28,23,.06)}
+.sheet::before{content:"";position:absolute;inset:-10px 10px 10px -10px;background:var(--kraft);z-index:-1;transform:translateZ(-20px) rotate(-1.2deg)}
+.sheet::after{content:"";position:absolute;inset:-6px -6px 6px 6px;background:#F7EEDB;z-index:-1;transform:translateZ(-10px) rotate(.8deg)}
+.head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:3px double var(--ink);padding-bottom:14px;margin-bottom:6px}
+.head .t{font-family:var(--f-display);font-size:clamp(26px,4vw,38px);line-height:1.05}
+.head .meta{font-family:var(--f-type);font-size:13px;text-align:right;line-height:1.7}
+.fs{border:0;margin:0;padding:26px 0 8px;border-bottom:1.5px dashed var(--rule)}
+.fs:last-of-type{border-bottom:0}
+.fs legend{padding:0;display:flex;gap:12px;align-items:center}
+.sec{font-family:"Bungee",cursive;font-size:15px;width:34px;height:34px;display:grid;place-items:center;background:var(--ink);color:var(--sheet);transform:rotate(-4deg);flex:none}
+.fs legend b{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,3vw,27px);line-height:1.1}
+.hint{margin:10px 0 14px;color:var(--muted);font-size:16px;max-width:60ch}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px 22px}
+.field label{display:block;font-family:var(--f-type);font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.field input{width:100%;font-family:var(--f-type);font-size:18px;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:6px 2px;color:var(--ink)}
+.field input:focus{outline:none;border-bottom-color:var(--tomato);background:rgba(251,227,142,.35)}
+.field .fixed{font-family:var(--f-type);font-size:18px;font-weight:700;border-bottom:2px solid var(--ink);padding:6px 2px}
+
+/* tick boxes */
+.ticks{display:grid;gap:10px}
+.tick{display:flex;gap:12px;align-items:center;cursor:pointer;font-weight:700;font-size:17px;padding:4px 0}
+.tick input{position:absolute;opacity:0;width:1px;height:1px}
+.box{width:28px;height:28px;border:2.5px solid var(--ink);background:var(--sheet);position:relative;flex:none;border-radius:2px 5px 3px 4px}
+.box::after{content:"";position:absolute;left:5px;top:-6px;width:12px;height:22px;border:solid var(--teal);border-width:0 5px 5px 0;transform:rotate(40deg) scale(0);transform-origin:60% 60%;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.tick input:checked+.box::after{transform:rotate(40deg) scale(1)}
+.tick input:focus-visible+.box{outline:3px dashed var(--tomato);outline-offset:3px}
+.tick input[type=radio]+.box{border-radius:50%}
+.tick input[type=radio]+.box::after{left:4px;top:4px;width:14px;height:14px;border:0;border-radius:50%;background:var(--tomato);transform:scale(0)}
+.tick input[type=radio]:checked+.box::after{transform:scale(1)}
+.tick small{font-weight:400;color:var(--muted);font-family:var(--f-type);font-size:13px}
+
+/* annexures */
+.annexes{display:grid;gap:22px;margin:22px 0 10px;perspective:1200px}
+.annex{position:relative;background:var(--c,var(--note));padding:20px 20px 18px;transform-origin:0 50%;box-shadow:3px 6px 0 rgba(32,28,23,.15);transform:rotate(var(--r,0deg))}
+.annex.open{animation:swing .8s cubic-bezier(.25,1.3,.4,1) both}
+@keyframes swing{from{transform:rotateY(-95deg) rotate(var(--r,0deg));opacity:.3}to{transform:rotateY(0) rotate(var(--r,0deg));opacity:1}}
+.annex::before{content:"";position:absolute;top:-14px;left:28px;width:26px;height:56px;border:4px solid #8D8A84;border-radius:13px;border-bottom-color:transparent;transform:rotate(-6deg)}
+.annex .no{font-family:var(--f-type);font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-left:44px}
+.annex h3{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,3vw,28px);line-height:1.15;margin:6px 0 10px}
+.annex p{margin:0 0 10px;max-width:62ch}
+.annex .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,150px);gap:16px;align-items:center}
+.annex .row img{width:100%;height:auto;filter:drop-shadow(3px 5px 0 rgba(32,28,23,.2));transform:rotate(3deg)}
+.big{font-family:var(--f-display);font-size:clamp(40px,7vw,60px);line-height:1;display:block;margin:2px 0 6px}
+.bars{display:grid;gap:10px;margin:10px 0 6px;max-width:420px}
+.bar .lab{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:3px}
+.bar .lab span{font-family:var(--f-type)}
+.bar .trk{height:22px;background:rgba(255,253,247,.55)}
+.bar .fill{height:100%;width:var(--w);background:var(--fc,var(--ink));transform-origin:0 50%}
+.annex.open .fill{animation:grow 1.1s .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.pills span{font-weight:700;font-size:14.5px;background:var(--sheet);padding:4px 10px;box-shadow:1px 2px 0 rgba(32,28,23,.15);transform:rotate(var(--r,0deg))}
+
+/* KYC */
+.kyc{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+.time{list-style:none;margin:6px 0 0;padding:0 0 0 22px;position:relative}
+.time::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;border-left:3px dotted var(--muted)}
+.time li{position:relative;padding:3px 0 12px}
+.time li::before{content:"";position:absolute;left:-22px;top:9px;width:15px;height:15px;background:var(--c,var(--tomato));transform:rotate(45deg)}
+.time .when{font-family:var(--f-type);font-size:13px;color:var(--muted);display:block;font-variant-numeric:tabular-nums}
+.time .what{font-weight:700}
+.time .det{display:block;font-size:15px;color:var(--muted)}
+.verified{justify-self:start;width:max-content;font-family:"Bungee",cursive;font-size:15px;color:var(--teal);border:3px solid currentColor;padding:6px 12px 3px;transform:rotate(-10deg);border-radius:4px;margin-top:20px;white-space:nowrap}
+
+/* the street */
+.street{position:relative;margin:18px -8px 6px;perspective:1100px;perspective-origin:50% 0%}
+.lane{position:relative;transform-style:preserve-3d;transform:rotateX(14deg);display:grid;align-items:end;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px 14px 0}
+.lane::after{content:"";position:absolute;left:0;right:0;bottom:-70px;height:120px;background:linear-gradient(#D9CDB4,#E8DDC6);transform-origin:50% 0;transform:rotateX(90deg);z-index:-1}
+.road{height:16px;margin:0 6px;background:repeating-linear-gradient(90deg,#5F5E5A 0 26px,#FBE38E 26px 40px);transform:rotateX(14deg);opacity:.85}
+.shop{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;position:relative;transform-origin:50% 100%;transform:rotateX(var(--fold,0deg));transform-style:preserve-3d;transition:filter .2s}
+.shop img{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 0 rgba(32,28,23,.15))}
+.shop .sign{display:block;font-family:"Bungee",cursive;font-size:clamp(11px,1.5vw,14px);background:var(--ink);color:var(--sheet);padding:3px 6px 1px;margin:6px auto 0;width:max-content;max-width:100%;transform:rotate(-2deg)}
+.shop:hover img{filter:drop-shadow(0 10px 0 rgba(32,28,23,.2)) brightness(1.04)}
+.shop[aria-pressed="true"] .sign{background:var(--tomato)}
+.shadow{position:absolute;left:10%;right:10%;bottom:-6px;height:16px;border-radius:50%;background:rgba(32,28,23,.25);filter:blur(4px);transform:scaleY(var(--sh,1));z-index:-1}
+.loannote{margin:18px 0 6px;background:var(--note);padding:16px 18px;transform:rotate(-.7deg);box-shadow:2px 4px 0 rgba(32,28,23,.15);max-width:560px;min-height:100px}
+.loannote b{font-family:var(--f-display);font-weight:400;font-size:24px;display:block;line-height:1.15;margin-bottom:4px}
+.loannote.in{animation:slap .45s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes slap{from{transform:rotate(6deg) scale(1.2) translateY(-14px)}to{transform:rotate(-.7deg) scale(1)}}
+.rain{position:absolute;inset:-30px 0 40px;pointer-events:none;overflow:hidden}
+.notes{position:absolute;top:-30px;width:34px;height:18px;background:var(--money);border:1.5px solid #3B6D11;display:grid;place-items:center;font-size:11px;font-weight:700;color:#173404;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(0) rotateX(0) rotateY(0) rotate(0)}100%{transform:translateY(520px) rotateX(540deg) rotateY(360deg) rotate(80deg)}}
+
+/* submit */
+.declare{display:flex;gap:12px;align-items:flex-start;margin:16px 0 0;font-size:16px}
+.err{color:#B3261E;font-family:var(--f-type);font-size:13.5px;margin:6px 0 0;min-height:1.2em}
+.submit{font-family:"Bungee",cursive;font-size:20px;letter-spacing:.03em;background:var(--teal);color:var(--sheet);border:0;padding:13px 26px 10px;margin-top:10px;cursor:pointer;transform:rotate(-1.5deg);box-shadow:3px 5px 0 rgba(32,28,23,.25);transition:transform .15s}
+.submit:hover{transform:rotate(1deg) translateY(-2px)}
+.privacy{margin:12px 0 0}
+
+/* result */
+.result{position:relative;z-index:1;padding-block:10px 50px;perspective:1400px}
+.result .sheet{transform:none}
+.checks{list-style:none;margin:10px 0 0;padding:0;font-family:var(--f-type);font-size:16px;display:grid;gap:6px}
+.checks li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--rule);padding:4px 0}
+.checks li .ok{color:var(--teal);font-weight:700;white-space:nowrap}
+.checks li.wait .ok{color:var(--muted)}
+.score{display:flex;align-items:baseline;gap:12px;margin:16px 0 6px;flex-wrap:wrap}
+.score b{font-family:var(--f-display);font-size:54px;line-height:1}
+.letter{position:relative;margin-top:24px;background:#FFFEF9;border:1.5px solid var(--rule);padding:clamp(18px,3vw,30px);transform:rotate(.4deg)}
+.letter h3{font-family:var(--f-display);font-weight:400;font-size:28px;margin:0 0 8px}
+.letter p{max-width:58ch}
+.stamp{position:absolute;right:clamp(10px,4vw,40px);top:clamp(10px,3vw,26px);font-family:"Bungee",cursive;font-size:clamp(24px,4vw,38px);color:var(--teal);border:5px solid currentColor;border-radius:6px;padding:6px 16px 2px;transform:rotate(-14deg);opacity:0;pointer-events:none;mix-blend-mode:multiply}
+.stamp.hit{animation:stamp .55s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes stamp{0%{transform:translateZ(300px) rotate(-14deg) scale(2.6);opacity:0}70%{opacity:.9}100%{transform:translateZ(0) rotate(-14deg) scale(1);opacity:.88}}
+.shake{animation:shake .35s .45s}
+@keyframes shake{25%{transform:translate(2px,3px) rotate(.6deg)}50%{transform:translate(-2px,-1px) rotate(.2deg)}75%{transform:translate(1px,2px) rotate(.5deg)}}
+.disb{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin:14px 0}
+.line{background:var(--note);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:2px 3px 0 rgba(32,28,23,.15);min-width:0}
+.line .l{font-family:var(--f-type);font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.line .v{font-weight:700;word-break:break-all;user-select:all}
+.cp{font-family:var(--f-type);font-weight:700;font-size:13px;border:2px solid var(--ink);background:var(--sheet);padding:4px 10px;cursor:pointer;flex:none}
+.sign-off{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:10px}
+.sign-off img{width:150px;height:auto;filter:drop-shadow(3px 5px 0 rgba(32,28,23,.2))}
+.again{font-family:var(--f-type);font-weight:700;font-size:14px;background:none;border:0;text-decoration:underline;cursor:pointer;color:var(--ink);padding:0}
+footer{position:relative;z-index:1;text-align:center;font-family:var(--f-type);font-size:12.5px;color:var(--muted);padding:0 18px 40px}
+
+
+/* motion layer */
+.scrap{will-change:transform}
+.cutout .l:hover{transform:translateY(-6px) rotate(calc(var(--r,0deg) * -2)) scale(1.08)}
+.stage{animation:rise 1.2s .75s cubic-bezier(.2,1.2,.35,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(70px) rotateX(55deg) scale(.92)}to{opacity:1;transform:none}}
+.lede,.formno,.start{animation:fadeup .8s cubic-bezier(.2,.9,.3,1) both}
+.formno{animation-delay:.55s}.lede{animation-delay:1.25s}.start{animation-delay:1.45s}
+@keyframes fadeup{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+.start{animation-name:fadeup}
+.rv.pre{opacity:0}
+.rv.in{animation:place 1s cubic-bezier(.2,1.2,.35,1) both}
+@keyframes place{from{opacity:0;transform:translateY(80px) rotateX(-32deg) rotate(-2.5deg)}to{opacity:1;transform:none}}
+.fs.in .sec{animation:secstamp .55s .35s cubic-bezier(.3,1.7,.5,1) both}
+@keyframes secstamp{from{opacity:0;transform:scale(2.6) rotate(-24deg)}to{opacity:1;transform:rotate(-4deg)}}
+.fs.in .verified{animation:secstamp .6s .9s cubic-bezier(.3,1.7,.5,1) both}
+.time li{transition:transform .5s cubic-bezier(.2,1.2,.35,1),opacity .5s}
+.fs.pre .time li{transform:translateX(-20px)}
+.progress{position:fixed;left:0;right:0;top:0;z-index:20;pointer-events:none;padding-top:env(safe-area-inset-top,0px)}
+.progress i{display:block;height:5px;background:repeating-linear-gradient(90deg,var(--mustard) 0 18px,var(--tomato) 18px 36px,var(--teal) 36px 54px);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.progress b{position:absolute;top:calc(env(safe-area-inset-top,0px) + 9px);left:calc(var(--p,0) * 100%);transform:translateX(-50%) rotate(-3deg);font-family:var(--f-type);font-size:12px;font-weight:700;background:var(--ink);color:var(--sheet);padding:2px 8px;white-space:nowrap;opacity:var(--o,0);transition:opacity .3s}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
+.curtain{position:fixed;inset:0;z-index:60;pointer-events:none}
+.curtain i{position:absolute;top:-2%;bottom:-2%;width:54%;background-color:var(--kraft);background-image:inherit;filter:drop-shadow(0 0 12px rgba(32,28,23,.3))}
+.curtain .cl{left:-2%;animation:openL 1.05s .25s cubic-bezier(.75,0,.2,1) forwards}
+.curtain .cr{right:-2%;animation:openR 1.05s .25s cubic-bezier(.75,0,.2,1) forwards}
+.curtain span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);font-family:"Bungee",cursive;font-size:clamp(24px,5vw,44px);color:var(--ink);border:5px solid var(--ink);padding:8px 20px 4px;z-index:2;animation:out .3s .2s forwards}
+@keyframes openL{to{transform:translateX(-108%) rotate(-6deg)}}
+@keyframes openR{to{transform:translateX(108%) rotate(6deg)}}
+@keyframes out{to{opacity:0;transform:translate(-50%,-50%) rotate(-6deg) scale(1.4)}}
+.shop{will-change:transform}
+.shop:active{transform:rotateX(var(--fold,0deg)) scale(.96)}
+.annex{transition:translate .25s}.annex:hover{translate:0 -4px}
+.submit:active{transform:scale(.95)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-block:28px 10px}
+  .stage{width:min(80%,300px);justify-self:end}
+  .head .meta{text-align:left}
+  .lane{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}
+  .lane::after{display:none}
+  .road{margin-top:18px}
+  .annex .row{grid-template-columns:minmax(0,1fr)}
+  .annex .row img{width:130px;justify-self:end}
+  .kyc{grid-template-columns:minmax(0,1fr)}
+  .stamp{top:130px;right:8px;font-size:22px;border-width:4px}
+  .hero .stage{margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .curtain,#fx{display:none}
+  .rv.pre{opacity:1}
+  .stamp{opacity:.88}
+}
+</style>
+
+<div class="curtain" id="curtain" aria-hidden="true"><i class="cl"></i><i class="cr"></i><span>FORM R-26</span></div>
+<div class="progress" aria-hidden="true" id="progress"><i></i><b id="pl">Form 0% filled</b></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="scraps" aria-hidden="true" id="scraps"></div>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="formno"><span>FORM R-26</span><em>Loan application</em></div>
+      <h1 class="cutout big" aria-label="Riya Mewada" data-text="RIYA MEWADA" data-seed="7"></h1>
+      <p class="lede">She helps businesses apply for loans. Now you can apply for one: <b>a loan of 1 (one) Riya</b>, for your team.</p>
+      <a class="start" href="#form" id="startBtn">Start application</a>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="stack" id="stack">
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="clip"></div>
+        <img class="sticker" src="img/desk.png" alt="" width="456" height="474">
+        <div class="bubble">₹5.46 Cr!</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="formwrap" id="form">
+    <form class="sheet rv" id="app" novalidate>
+      <div class="head">
+        <div class="t">Application for a loan of<br>1 (one) Riya Mewada</div>
+        <div class="meta">Business Manager · MSME &amp; debt syndication<br>Blink Finance, Mira Road, Mumbai<br>MBA Finance (NMIMS) · B.Sc. IT</div>
+      </div>
+
+      <fieldset class="fs rv">
+        <legend><span class="sec">A</span><b>Applicant details</b></legend>
+        <p class="hint">Who is applying? This stays on this page; nothing you type is sent anywhere.</p>
+        <div class="fields">
+          <div class="field"><label for="co">Company or team</label><input id="co" type="text" placeholder="Your company" maxlength="60"></div>
+          <div class="field"><label for="nm">Your name</label><input id="nm" type="text" placeholder="Your name" maxlength="60"></div>
+          <div class="field"><label>Loan amount</label><div class="fixed">1 Riya, full time</div></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs rv">
+        <legend><span class="sec">B</span><b>Purpose of loan</b></legend>
+        <p class="hint">Tick everything you need. Each tick attaches a supporting document from her record.</p>
+        <div class="ticks">
+          <label class="tick"><input type="checkbox" data-annex="ax1" checked><span class="box"></span>Grow our MSME lending book</label>
+          <label class="tick"><input type="checkbox" data-annex="ax2"><span class="box"></span>Bring in more leads</label>
+          <label class="tick"><input type="checkbox" data-annex="ax3"><span class="box"></span>Build a stronger team</label>
+          <label class="tick"><input type="checkbox" data-annex="ax4"><span class="box"></span>Fix our processes with tech</label>
+          <label class="tick"><input type="checkbox" data-annex="ax5"><span class="box"></span>Advise business clients on funding</label>
+        </div>
+
+        <div class="annexes">
+          <div class="annex open" id="ax1" style="--c:var(--note);--r:-.6deg">
+            <div class="no">Annexure B1 · Track record</div>
+            <div class="row"><div>
+              <span class="big">₹5.46 Crore</span>
+              <p>in MSME business loans and working capital facilitated since June 2025, through bank and NBFC partners. She runs the whole cycle: credit fit, product match, documentation and follow-through to disbursement.</p>
+            </div><img src="img/lend.png" alt="Doodle of Riya holding an approved loan file" width="603" height="734" loading="lazy"></div>
+          </div>
+          <div class="annex" id="ax2" hidden style="--c:#BFE3DA;--r:.5deg">
+            <div class="no">Annexure B2 · Lead generation</div>
+            <div class="row"><div>
+              <h3>She opened two new channels</h3>
+              <p>She proposed and launched the firm's presence on IndiaMART and Justdial, which now bring steady inbound inquiries to the sales team. She also runs LinkedIn, YouTube, Facebook and Instagram, and plans webinars and seminars for business owners.</p>
+              <div class="pills"><span style="--r:-2deg">IndiaMART</span><span style="--r:1.5deg">Justdial</span><span style="--r:-1deg">Webinars</span><span style="--r:2deg">Social media</span></div>
+            </div><img src="img/grow.png" alt="Doodle of Riya watering a money plant" width="576" height="746" loading="lazy"></div>
+          </div>
+          <div class="annex" id="ax3" hidden style="--c:#F7C9D2;--r:-.4deg">
+            <div class="no">Annexure B3 · Team building</div>
+            <div class="row"><div>
+              <h3>Her mentee beat the target 7×</h3>
+              <p>She mentors the finance and sales interns. One of them closed ₹3.5 Crore in working capital against a ₹50 Lakh target and won the firm's disbursement contest. Drawn to scale:</p>
+              <div class="bars">
+                <div class="bar"><div class="lab">Target<span>₹50 L</span></div><div class="trk"><div class="fill" style="--w:14.3%;--fc:#8D6A3D"></div></div></div>
+                <div class="bar"><div class="lab">Closed<span>₹3.5 Cr</span></div><div class="trk"><div class="fill" style="--w:100%;--fc:#2A9D8F"></div></div></div>
+              </div>
+            </div><img src="img/trophy.png" alt="Doodle of Riya jumping with a trophy" width="449" height="752" loading="lazy"></div>
+          </div>
+          <div class="annex" id="ax4" hidden style="--c:#C9D3EE;--r:.6deg">
+            <div class="no">Annexure B4 · Technical skills</div>
+            <h3>A finance person with an IT degree</h3>
+            <p>Her B.Sc. in Information Technology shows up as process automation, digital lead generation and data-driven sales. At HDFC Life, during Class 12, she built Excel-based fixes for backend workflows. In college she led planning and frontend design on a team e-commerce site, and her team reached the top 30 at the IBM SkillsBuild Maharashtra Hackathon 2025.</p>
+            <div class="pills"><span style="--r:1deg">Excel automation</span><span style="--r:-1.5deg">Process improvement</span><span style="--r:2deg">User flows</span><span style="--r:-1deg">Project planning</span></div>
+          </div>
+          <div class="annex" id="ax5" hidden style="--c:#F5D7A8;--r:-.5deg">
+            <div class="no">Annexure B5 · Advisory</div>
+            <h3>She explains funding in plain language</h3>
+            <p>She advises business owners on working capital, debt restructuring and government-backed schemes, and publishes explainers on CGTMSE: who is eligible, how much guarantee cover a loan gets, and what it costs. That lets eligible small businesses borrow without pledging property.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs rv">
+        <legend><span class="sec">C</span><b>KYC: know your candidate</b></legend>
+        <div class="kyc">
+          <ol class="time">
+            <li style="--c:var(--tomato)"><span class="when">Jun 2026 – now</span><span class="what">MBA, Finance · NMIMS CDOE</span></li>
+            <li style="--c:var(--teal)"><span class="when">Jun 2025 – now</span><span class="what">Business Manager · Blink Finance (loan DSA)</span><span class="det">MSME loans, working capital, debt syndication</span></li>
+            <li style="--c:var(--mustard)"><span class="when">2023 – 2026</span><span class="what">B.Sc. Information Technology · Grade A</span><span class="det">Shree L.R. Tiwari Degree College, University of Mumbai. Core member, Women Development Cell.</span></li>
+            <li style="--c:var(--cobalt)"><span class="when">During Class 12</span><span class="what">Intern · HDFC Life, 4 months</span><span class="det">Backend process automation with Excel</span></li>
+            <li style="--c:var(--pink)"><span class="when">2021</span><span class="what">SSC · St. Xavier's High School · Grade A</span></li>
+          </ol>
+          <div class="verified">KYC VERIFIED</div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs rv">
+        <legend><span class="sec">D</span><b>Field verification: Riya's street</b></legend>
+        <p class="hint">Scroll to unfold the street, then tap a shop to see which loan she would match it with.</p>
+        <div class="street" id="street">
+          <div class="rain" id="rain" aria-hidden="true"></div>
+          <div class="lane" id="lane">
+            <button type="button" class="shop" data-i="0" aria-pressed="false"><img src="img/kirana.png" alt="Kirana store" width="563" height="549" loading="lazy"><span class="sign">Kirana</span><span class="shadow"></span></button>
+            <button type="button" class="shop" data-i="1" aria-pressed="false"><img src="img/workshop.png" alt="Fabrication workshop" width="636" height="501" loading="lazy"><span class="sign">Workshop</span><span class="shadow"></span></button>
+            <button type="button" class="shop" data-i="2" aria-pressed="false"><img src="img/tailor.png" alt="Tailoring unit" width="666" height="582" loading="lazy"><span class="sign">Tailor</span><span class="shadow"></span></button>
+            <button type="button" class="shop" data-i="3" aria-pressed="false"><img src="img/dairy.png" alt="Dairy shop" width="651" height="512" loading="lazy"><span class="sign">Dairy</span><span class="shadow"></span></button>
+          </div>
+          <div class="road" aria-hidden="true"></div>
+        </div>
+        <div class="loannote" id="loannote" aria-live="polite"><b>Pick a shop</b>Each one needs a different kind of money. Matching the two is her daily work.</div>
+        <p class="small">Example businesses, drawn for this page. Not real clients.</p>
+      </fieldset>
+
+      <fieldset class="fs rv">
+        <legend><span class="sec">E</span><b>Repayment terms</b></legend>
+        <div class="ticks">
+          <label class="tick"><input type="radio" name="rp" value="Interesting MSME files" checked><span class="box"></span>Interesting MSME files to work on</label>
+          <label class="tick"><input type="radio" name="rp" value="A team that grows"><span class="box"></span>A team that wants to grow</label>
+          <label class="tick"><input type="radio" name="rp" value="1 cutting chai per week"><span class="box"></span>1 cutting chai per week <small>(minimum)</small></label>
+        </div>
+        <label class="declare"><span class="tick" style="padding:0"><input type="checkbox" id="decl"><span class="box"></span></span><span>I declare that I'm serious about hiring a finance professional who also understands tech.</span></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="submit" type="submit">Submit application</button>
+        <p class="small privacy">A playful application. Nothing you enter leaves this page.</p>
+      </fieldset>
+    </form>
+  </div>
+
+  <section class="result" id="result" hidden aria-live="polite">
+    <div class="sheet" id="resSheet">
+      <div class="head"><div class="t">Credit appraisal</div><div class="meta" id="resMeta">Form R-26</div></div>
+      <ul class="checks" id="checks"></ul>
+      <div class="score" id="score" hidden><b>Riya score: 850</b><span class="small">Risk: low · Fit: high</span></div>
+      <div class="letter" id="letter" hidden>
+        <div class="stamp" id="stamp">APPROVED</div>
+        <h3>Sanction letter</h3>
+        <p id="dear">Dear applicant,</p>
+        <p id="sanct">Your application for a loan of 1 (one) Riya Mewada has been approved, subject to one conversation. Disbursement details are below.</p>
+        <div class="disb">
+          <div class="line"><div style="min-width:0"><div class="l">Email</div><div class="v" id="em">mewadariya05@gmail.com</div></div><button class="cp" type="button" data-copy="em">Copy</button></div>
+          <div class="line"><div style="min-width:0"><div class="l">Phone</div><div class="v" id="ph">+91 99203 10038</div></div><button class="cp" type="button" data-copy="ph">Copy</button></div>
+          <div class="line"><div style="min-width:0"><div class="l">LinkedIn</div><div class="v"><a href="https://www.linkedin.com/in/riya-mewada-ab28a4314/" target="_blank" rel="noopener">riya-mewada</a></div></div></div>
+        </div>
+        <div class="sign-off">
+          <div><p style="margin:0" id="terms">Repayment: interesting MSME files to work on.</p><button type="button" class="again" id="again">Start a new application</button></div>
+          <img src="img/wave.png" alt="Doodle of Riya waving" width="566" height="658">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>Riya Mewada · MSME finance &amp; debt syndication · Mumbai</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+  function rng(seed){let s=seed*9301+49297;return()=>{s=(s*9301+49297)%233280;return s/233280;};}
+  function torn(seed,amp){const r=rng(seed),n=30,m=8,p=[];
+    for(let i=0;i<=n;i++)p.push((i/n*100).toFixed(2)+'% '+(r()*amp).toFixed(1)+'px');
+    for(let j=1;j<m;j++)p.push('calc(100% - '+(r()*3).toFixed(1)+'px) '+(j/m*100).toFixed(1)+'%');
+    for(let i=n;i>=0;i--)p.push((i/n*100).toFixed(2)+'% calc(100% - '+(r()*amp).toFixed(1)+'px)');
+    for(let j=m-1;j>0;j--)p.push((r()*3).toFixed(1)+'px '+(j/m*100).toFixed(1)+'%');
+    return 'polygon('+p.join(',')+')';}
+
+  /* cut-out letters */
+  const FONTS=['"Abril Fatface",serif','"Bungee",cursive','"Rubik Mono One",sans-serif','"Shrikhand",cursive','"Bebas Neue",sans-serif','"Playfair Display",serif','"Courier Prime",monospace'];
+  const PAIRS=[['#E8553B','#FFFDF7'],['#F2B33D','#201C17'],['#2A9D8F','#FFFDF7'],['#3557A6','#FFFDF7'],['#F2A0B1','#201C17'],['#FBE38E','#201C17'],['#201C17','#FBE38E'],['#CFAE80','#201C17']];
+  document.querySelectorAll('.cutout').forEach(el=>{
+    const r=rng(+el.dataset.seed||1);let k=0;el.textContent='';
+    el.dataset.text.split(' ').forEach(word=>{const w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+      [...word].forEach(ch=>{const s=document.createElement('span');s.className='l';s.textContent=ch;
+        const f=FONTS[Math.floor(r()*FONTS.length)],p=PAIRS[Math.floor(r()*PAIRS.length)],rot=(r()*10-5).toFixed(1),j=()=>(r()*3).toFixed(1);
+        s.style.cssText='font-family:'+f+';background:'+p[0]+';color:'+p[1]+';--r:'+rot+'deg;--r0:'+(rot*3)+'deg;animation-delay:'+(reduce?0:650+k*55)+'ms;'+(f.includes('Playfair')?'font-style:italic;font-weight:900;':'')+(f.includes('Courier')?'font-weight:700;':'');
+        s.style.clipPath='polygon('+j()+'px '+j()+'px,calc(100% - '+j()+'px) 0,100% calc(100% - '+j()+'px),'+j()+'px 100%)';
+        w.appendChild(s);k++;});el.appendChild(w);});
+  });
+
+  /* scraps */
+  const sc=document.getElementById('scraps');
+  [['var(--pink)',-6,8,'190px','150px',-12],['var(--teal)',84,4,'220px','170px',9],['var(--mustard)',-4,58,'150px','210px',6],['var(--cobalt)',88,66,'170px','150px',-8],['var(--kraft)',38,92,'260px','120px',3]].forEach((d,i)=>{
+    const s=document.createElement('div');s.className='scrap';s.dataset.rot=d[5];s.dataset.depth=[.06,.14,.09,.18,.11][i];s.style.cssText='left:'+d[1]+'%;top:'+d[2]+'%;width:'+d[3]+';height:'+d[4]+';transform:rotate('+d[5]+'deg);opacity:.5';
+    const inner=document.createElement('i');inner.style.background=d[0];inner.style.clipPath=torn(90+i,10);s.appendChild(inner);sc.appendChild(s);});
+  document.querySelectorAll('.annex').forEach((a,i)=>a.style.clipPath=torn(200+i,5));
+
+  /* ---------- motion engine ---------- */
+  const curtain=document.getElementById('curtain');
+  if(curtain){const tc=torn(77,14);
+    curtain.querySelector('.cl').style.clipPath=tc.replace(/calc\(100% - ([\d.]+)px\) ([\d.]+)%/g,(m,a,b)=>'calc(100% - '+(Number(a)*6)+'px) '+b+'%');
+    setTimeout(()=>curtain.remove(),reduce?0:1500);}
+  let lenis=null;
+  try{if(window.Lenis&&!reduce){lenis=new Lenis({lerp:.075,smoothWheel:true,wheelMultiplier:.95});document.documentElement.classList.add('lenis');}}catch(e){lenis=null;}
+  function go(el,off){if(lenis)lenis.scrollTo(el,{offset:off||-30,duration:1.5,easing:t=>1-Math.pow(1-t,4)});else el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}
+  document.getElementById('startBtn').addEventListener('click',e=>{e.preventDefault();go(document.getElementById('form'),-10);});
+
+  /* reveal: sheets drop onto the desk */
+  const rvs=[...document.querySelectorAll('.rv')];
+  if('IntersectionObserver' in window&&!reduce){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const t=en.target;t.classList.remove('pre');t.classList.add('in');
+      t.querySelectorAll('.time li').forEach((li,i)=>li.style.transitionDelay=(.3+i*.09)+'s');io.unobserve(t);}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    rvs.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight*.92){el.classList.add('pre');io.observe(el);}else el.classList.add('in');});
+  }else rvs.forEach(el=>el.classList.add('in'));
+
+  const stack=document.getElementById('stack'),sheet=document.getElementById('app'),street=document.getElementById('street');
+  const shops=[...document.querySelectorAll('.shop')],shadows=shops.map(s=>s.querySelector('.shadow'));
+  const scrapEls=[...document.querySelectorAll('.scrap')];
+  const prog=document.getElementById('progress'),pl=document.getElementById('pl');
+  const fold=shops.map(()=>84);
+  let mx=0,my=0,cx=0,cy=0,pv=0;
+  addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+
+  /* fx canvas: ink trail + paper confetti */
+  const fx=document.getElementById('fx'),ctx=fx.getContext('2d');let dpr=1;
+  function size(){dpr=Math.min(devicePixelRatio||1,2);fx.width=innerWidth*dpr;fx.height=innerHeight*dpr;}
+  size();addEventListener('resize',size);
+  const trail=[],parts=[];const fine=matchMedia('(pointer:fine)').matches&&!reduce;
+  if(fine)addEventListener('mousemove',e=>{trail.push({x:e.clientX,y:e.clientY,t:performance.now()});if(trail.length>40)trail.shift();},{passive:true});
+  const PCOL=['#9CC9A3','#F2B33D','#E8553B','#2A9D8F','#3557A6','#F2A0B1','#FBE38E'];
+  function burst(x,y,n){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=6+Math.random()*12;
+    parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-8,r:Math.random()*6,vr:(Math.random()-.5)*.4,f:Math.random()*6,vf:.1+Math.random()*.25,w:i%3===0?30:12,h:i%3===0?16:8,c:i%3===0?'#9CC9A3':PCOL[i%PCOL.length],note:i%3===0,life:0});}}
+  window.__burst=burst;
+
+  function frame(t){
+    if(lenis)lenis.raf(t);
+    const y=scrollY;
+    /* hero paper stack follows the mouse with an idle sway */
+    cx+=(mx-cx)*.08;cy+=(my-cy)*.08;const idle=reduce?0:Math.sin(t/1700)*.18;
+    if(!reduce)stack.style.transform='rotateY('+((cx+idle*.5)*24).toFixed(2)+'deg) rotateX('+((-cy+.06)*18).toFixed(2)+'deg) translateY('+(-y*.06).toFixed(1)+'px)';
+    /* depth parallax on the background scraps */
+    if(!reduce)scrapEls.forEach(el=>{const d=+el.dataset.depth;el.style.transform='translate3d('+(cx*d*-160).toFixed(1)+'px,'+(-y*d).toFixed(1)+'px,0) rotate('+(+el.dataset.rot+y*d*.03).toFixed(2)+'deg)';});
+    /* pop-up street, spring-smoothed */
+    const sr=street.getBoundingClientRect(),base=(innerHeight-sr.top)/(innerHeight*.6);
+    shops.forEach((s,i)=>{const p=clamp(base-i*.15),e=1-Math.pow(1-p,3),target=reduce?0:84*(1-e);
+      fold[i]+=(target-fold[i])*.14;s.style.setProperty('--fold',fold[i].toFixed(2)+'deg');shadows[i].style.setProperty('--sh',(.2+.8*(1-fold[i]/84)).toFixed(2));});
+    /* form progress pencil line */
+    const fr=sheet.getBoundingClientRect(),target=clamp((innerHeight*.6-fr.top)/fr.height);pv+=(target-pv)*.12;
+    prog.style.setProperty('--p',pv.toFixed(4));prog.style.setProperty('--o',(pv>.01&&pv<.995)?1:0);pl.textContent='Form '+Math.round(pv*100)+'% filled';
+    /* canvas: ink trail and confetti */
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,innerWidth,innerHeight);
+    const now=performance.now();while(trail.length&&now-trail[0].t>420)trail.shift();
+    if(trail.length>2){ctx.lineCap='round';ctx.lineJoin='round';
+      for(let i=1;i<trail.length;i++){const a=trail[i-1],b=trail[i],age=(now-b.t)/420;ctx.strokeStyle='rgba(32,28,23,'+(0.55*(1-age)).toFixed(3)+')';ctx.lineWidth=2.6*(1-age)+.4;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+    for(let i=parts.length-1;i>=0;i--){const q=parts[i];q.vy+=.42;q.vx*=.985;q.vy*=.985;q.x+=q.vx;q.y+=q.vy;q.r+=q.vr;q.f+=q.vf;q.life++;
+      const sx=Math.cos(q.f);ctx.save();ctx.translate(q.x,q.y);ctx.rotate(q.r);ctx.scale(sx,1);ctx.globalAlpha=clamp(1-(q.life-90)/40);
+      ctx.fillStyle=q.c;ctx.fillRect(-q.w/2,-q.h/2,q.w,q.h);
+      if(q.note){ctx.strokeStyle='#3B6D11';ctx.lineWidth=1.2;ctx.strokeRect(-q.w/2,-q.h/2,q.w,q.h);ctx.fillStyle='#173404';ctx.font='bold 10px Karla,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('₹',0,1);}
+      ctx.restore();if(q.life>130||q.y>innerHeight+60)parts.splice(i,1);}
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* annexures */
+  document.querySelectorAll('[data-annex]').forEach(cb=>cb.addEventListener('change',()=>{
+    const a=document.getElementById(cb.dataset.annex);
+    if(cb.checked){a.hidden=false;a.classList.remove('open');void a.offsetWidth;a.classList.add('open');const r=a.getBoundingClientRect();if(r.bottom>innerHeight-20)go(a,-Math.max(80,innerHeight-r.height-60));
+      const br=cb.parentElement.querySelector('.box').getBoundingClientRect();if(!reduce)burst(br.left+14,br.top+14,10);}
+    else a.hidden=true;
+  }));
+
+  /* falling rupee notes */
+  if(!reduce){const rain=document.getElementById('rain');
+    for(let i=0;i<9;i++){const n=document.createElement('span');n.className='notes';n.textContent='₹';
+      n.style.left=(6+i*11+Math.random()*4)+'%';n.style.animationDuration=(5+Math.random()*4).toFixed(1)+'s';n.style.animationDelay=(-Math.random()*8).toFixed(1)+'s';rain.appendChild(n);}}
+
+  const LOANS=[
+    ['Working capital','Stock on the shelves before the festival rush, paid back as it sells. It covers the gap between paying suppliers and getting paid.'],
+    ['Business loan','A new lathe so the workshop can take bigger orders. A term loan for one clear purpose.'],
+    ['Debt restructuring','Three loans with three EMIs, merged into a repayment that matches what the unit actually earns each month.'],
+    ['CGTMSE agri-allied loan','Dairy is agri-allied, so an eligible unit can get a collateral-free loan backed by the CGTMSE guarantee.']
+  ];
+  const note=document.getElementById('loannote');
+  shops.forEach(s=>s.addEventListener('click',()=>{
+    shops.forEach(o=>o.setAttribute('aria-pressed',String(o===s)));
+    const [t,d]=LOANS[+s.dataset.i];note.innerHTML='';const b=document.createElement('b');b.textContent=t;note.append(b,document.createTextNode(d));
+    note.classList.remove('in');void note.offsetWidth;note.classList.add('in');
+    if(!reduce){const r=s.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.3,16);}
+  }));
+
+  /* submit → credit check → stamp */
+  const form=document.getElementById('app'),err=document.getElementById('err'),decl=document.getElementById('decl');
+  const result=document.getElementById('result'),checks=document.getElementById('checks');
+  decl.addEventListener('change',()=>{if(decl.checked)err.textContent='';});
+  const wait=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!decl.checked){err.textContent='Tick the declaration first, then submit.';decl.focus();return;}
+    err.textContent='';
+    const co=document.getElementById('co').value.trim()||'your company',nm=document.getElementById('nm').value.trim();
+    const purposes=[...document.querySelectorAll('[data-annex]:checked')].length;
+    const rp=(document.querySelector('[name=rp]:checked')||{}).value||'Interesting MSME files';
+    result.hidden=false;document.getElementById('score').hidden=true;document.getElementById('letter').hidden=true;
+    document.getElementById('stamp').classList.remove('hit');document.getElementById('resSheet').classList.remove('shake');
+    document.getElementById('resMeta').textContent='Applicant: '+co;
+    checks.innerHTML='';go(result,-20);
+    const rows=[
+      ['Applicant identified',co],
+      ['Purposes ticked',purposes+' of 5, all matched to her record'],
+      ['Track record','₹5.46 Cr facilitated'],
+      ['Mentoring history','7× target, verified'],
+      ['Technical collateral','B.Sc. IT, pledged in full'],
+      ['Chai supply',rp.includes('chai')?'adequate':'not required']
+    ];
+    await wait(500);
+    for(const [k,v] of rows){const li=document.createElement('li');li.className='wait';
+      const a=document.createElement('span');a.textContent=k+': '+v;const b=document.createElement('span');b.className='ok';b.textContent='checking…';
+      li.append(a,b);checks.appendChild(li);await wait(520);b.textContent='✓ pass';li.className='';}
+    await wait(300);document.getElementById('score').hidden=false;
+    await wait(700);
+    document.getElementById('dear').textContent='Dear '+(nm||'applicant')+',';
+    document.getElementById('sanct').textContent='Your application, on behalf of '+co+', for a loan of 1 (one) Riya Mewada has been approved, subject to one conversation. Disbursement details are below.';
+    document.getElementById('terms').textContent='Repayment: '+rp.charAt(0).toLowerCase()+rp.slice(1)+'.';
+    const L=document.getElementById('letter');L.hidden=false;go(L,-80);
+    await wait(500);
+    document.getElementById('stamp').classList.add('hit');document.getElementById('resSheet').classList.add('shake');
+    if(!reduce)setTimeout(()=>{const r=document.getElementById('stamp').getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,90);},380);
+  });
+  document.getElementById('again').addEventListener('click',()=>{result.hidden=true;go(document.getElementById('form'),-10);});
+
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const el=document.getElementById(b.dataset.copy),t=el.textContent;
+    const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500);};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Ctrl+C';};
+    try{navigator.clipboard.writeText(t).then(done,sel);}catch(e){sel();}
+  }));
+})();
+</script>
